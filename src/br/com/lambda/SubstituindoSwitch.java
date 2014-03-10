@@ -9,13 +9,19 @@ import br.com.regioes.Oeste;
 import br.com.regioes.Sul;
 
 public class SubstituindoSwitch {
-	private List<Regiao> regioes = new ArrayList<>();
+	private List<Regiao> regioes;
 
-	public String buscaRegiao(int valor) {
+	public SubstituindoSwitch() {
+		regioes = new ArrayList<>();
+
 		regioes.add(new Sul());
 		regioes.add(new Norte());
 		regioes.add(new Leste());
 		regioes.add(new Oeste());
+
+	}
+
+	public String buscaRegiao(int valor) {
 
 		for (Regiao regiao : regioes) {
 			if (regiao.avalia(valor))
